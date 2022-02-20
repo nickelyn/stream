@@ -1,0 +1,35 @@
+body
+{
+    background-color: #59CCF2;
+    font-family: 'Open Sans', sans-serif;
+
+}
+#ui
+{
+    text-align: center;
+}
+button
+{
+    background-color: #20BDF1;
+    font-family: 'Open Sans', sans-serif;
+    cursor: poiner;
+    border:none;
+    border-radius:2px;
+    font-size: 20px;
+}
+button:hover {
+    border: none;
+    background: #01B4EF;
+}
+#streamSettings
+{
+    font-size: 20px;
+}
+input
+{
+    text-align: center;
+}
+footer
+{
+    text-align: right;
+}
