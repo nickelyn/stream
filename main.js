@@ -180,7 +180,7 @@ $(document).keyup(function (event) {
 
 		if ((String.fromCharCode(event.which) == key1.toUpperCase()) || (String.fromCharCode(event.which) == key2.toUpperCase())) {
 			if (event.key == key1) {
-				target.appendChild(wrapKey(key1, "dimgray"));
+				target.appendChild(wrapKey(key1, "red"));
 			}
 			if (event.key == key2) {
 				target.appendChild(wrapKey(key2, "black"));
