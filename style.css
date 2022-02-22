@@ -27,9 +27,15 @@ button:hover {
 }
 input
 {
+    min-width:0;
     text-align: center;
 }
 footer
 {
     text-align: right;
+}
+
+[contenteditable] {
+    border: 1px solid gray;
+    background-color: white !important;
 }

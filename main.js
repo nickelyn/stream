@@ -24,6 +24,8 @@ function beginTest() {
 	clickLimit = Math.round(parseInt(document.getElementById('clickNum').value));
 	timeLimit = Math.round(parseInt(document.getElementById('clickTime').value));
 
+	document.querySelector('div[contenteditable]').textContent = '';
+
 	if (timeLimit <= timeMin) {
 		alert(`Please enter a value larger than ${timeMin}`);
 		_running = false;
@@ -154,18 +156,42 @@ function update(click) {
 	}
 }
 
+function wrapKey(key, color) {
+	let span = document.createElement("span");
+	span.style.color = color;
+	span.textContent = key;
+
+	return span;
+}
+
+
+
 $(document).keyup(function (event) {
+	//let textarea = document.querySelector(".resize-ta");
+	//textarea.style.height = calcHeight(textarea.value) + "px";
+
+	let target = document.querySelector('div[contenteditable]');
 	if (event.keyCode == ENTER_KEY && !_running) {
 		beginTest();
 	}
+
 	if (_running) {
+
+
 		if ((String.fromCharCode(event.which) == key1.toUpperCase()) || (String.fromCharCode(event.which) == key2.toUpperCase())) {
-			
+			if (event.key == key1) {
+				target.appendChild(wrapKey(key1, "dimgray"));
+			}
+			if (event.key == key2) {
+				target.appendChild(wrapKey(key2, "black"));
+			}
+
 			switch (beginTime) {
 				case -1:
 					beginTime = Date.now();
 					$("div#status").html("Test currently running.");
 					updater = setInterval(function () { update(false); }, 16.6);
+
 
 					if ($("input[name='roption']:checked").val() == "time") {
 						endTimer = setTimeout(function () {
@@ -189,6 +215,7 @@ $(document).mousedown(function (event) {
 		document.oncontextmenu = function (e) { stopEvent(e); return false; };
 
 		if (event.keyCode == ENTER_KEY && _running) {
+			target.value = '';
 			beginTest();
 		}
 		if (_running) {
@@ -250,7 +277,7 @@ $(document).ready(function () {
 		$("input[name='cmouse']").prop("checked", localStorage.getItem('mouse') == "true");
 
 	$("#chartContainer").CanvasJSChart({
-		
+
 		zoomEnabled: true,
 		exportEnabled: true,
 		title: {
@@ -271,3 +298,10 @@ $(document).ready(function () {
 		]
 	});
 });
+
+function calcHeight(value) {
+	let numberOfLineBreaks = (value.match(/\n/g) || []).length;
+	// min-height + lines x line-height + padding + border
+	let newHeight = 20 + numberOfLineBreaks * 20 + 12 + 2;
+	return newHeight;
+}
