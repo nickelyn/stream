@@ -183,7 +183,7 @@ $(document).keyup(function (event) {
 				target.appendChild(wrapKey(key1, "red"));
 			}
 			if (event.key == key2) {
-				target.appendChild(wrapKey(key2, "black"));
+				target.appendChild(wrapKey(key2, "white"));
 			}
 
 			switch (beginTime) {
