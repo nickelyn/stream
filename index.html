@@ -6,53 +6,18 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" />
-  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <link rel="stylesheet" href="style.css">
   <script src="canvasjs-1.8.0/jquery.canvasjs.min.js"></script>
-  <script src="main.js" />
-  </script>
+  <script src="main.js"></script>
   <title>streaming</title>
   <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-  <style>
-    html {
-      position: relative;
-      min-height: 100%;
-    }
-
-    body {
-      background-color: #1a1a1a !important;
-      color: white !important;
-
-      /* Margin bottom by footer height */
-      margin-bottom: 80px;
-    }
-
-    button {
-      background-color: #168fb8 !important;
-      border-color: #0d5e79;
-      border-style: solid;
-    }
-
-    input {
-      color: black !important;
-    }
-
-    .footer {
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      margin-top: 20px;
-      /* Set the fixed height of the footer here */
-      height: 40px;
-      background-color: #000000;
-    }
-  </style>
 </head>
 
-<body>
+<body style="background-color: #222; color: #fff">
   <div class="container text-center" role="main" style="font-size:20px">
     <div>
       <p>hello. if u are special, here are the key names for the following:</p>
@@ -95,9 +60,10 @@
     Key 2<br />
     <input id="key2" maxlength="10" /><br /><br />
     <div style="overflow-wrap: break-word;" contenteditable="false">
-    </div><br />
-    <button id="submit" onclick="beginTest()" type="button">Begin Test</button><br />
-    <button id="stopbtn" onclick="endTest()" type="button" style="display:none">Stop Test</button><br />
+    </div>
+    <button class="btn btn-primary" id="submit" onclick="beginTest()" type="button">Begin Test</button>
+    <button class="btn btn-primary" id="stopbtn" onclick="endTest()" type="button" style="display:none">Stop
+      Test</button>
 
     <div id="status">Time starts when you make your first click.</div>
     <h3>Your Results:</h3>
@@ -115,8 +81,7 @@
 
   <footer class="footer">
     <div class="container" style="text-align:left">
-      Original by arctic, rewritten by Ckris<br>
-      <a href="https://github.com/ckrisirkc/osuStreamSpeed.js">View Source on Github</a>
+      Original by arctic, rewritten by nickely<br>
     </div>
   </footer>
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

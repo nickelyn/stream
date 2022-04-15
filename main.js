@@ -160,7 +160,7 @@ function update(click) {
 function wrapKey(key, color) {
 	let span = document.createElement("span");
 	span.style.color = color;
-	span.textContent = key;
+	span.textContent = key + " ";
 
 	return span;
 }
@@ -180,10 +180,10 @@ $(document).keyup(function (event) {
 		if (event.key.toLowerCase() == key1 || event.key.toLowerCase() == key2) {
 			//if ((String.fromCharCode(event.which) == key1.toUpperCase()) || (String.fromCharCode(event.which) == key2.toUpperCase())) {
 			if (event.key.toLowerCase() == key1) {
-				target.appendChild(wrapKey(key1, "red"));
+				target.appendChild(wrapKey("k1", "red"));
 			}
 			if (event.key.toLowerCase() == key2) {
-				target.appendChild(wrapKey(key2, "white"));
+				target.appendChild(wrapKey("k2", "white"));
 			}
 			switch (beginTime) {
 				case -1:
