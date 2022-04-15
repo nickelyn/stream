@@ -13,6 +13,7 @@ _running = false;
 
 var runNumber = 0;
 var counterNumber = 0;
+let updater;
 
 var baseData = {
 	type: "spline",
@@ -42,8 +43,8 @@ function beginTest() {
 	timediffs.length = 0;
 
 	beginTime = -1;
-	key1 = $('#key1').val();
-	key2 = $('#key2').val();
+	key1 = $('#key1').val().toLowerCase();
+	key2 = $('#key2').val().toLowerCase();
 	mouse = $("input[name='cmouse']").prop("checked");
 	$("div#status").html("Test ready, press key 1 or key 2 to begin.");
 	$("div#Result").html("\
@@ -176,16 +177,14 @@ $(document).keyup(function (event) {
 	}
 
 	if (_running) {
-
-
-		if ((String.fromCharCode(event.which) == key1.toUpperCase()) || (String.fromCharCode(event.which) == key2.toUpperCase())) {
-			if (event.key == key1) {
+		if (event.key.toLowerCase() == key1 || event.key.toLowerCase() == key2) {
+			//if ((String.fromCharCode(event.which) == key1.toUpperCase()) || (String.fromCharCode(event.which) == key2.toUpperCase())) {
+			if (event.key.toLowerCase() == key1) {
 				target.appendChild(wrapKey(key1, "red"));
 			}
-			if (event.key == key2) {
+			if (event.key.toLowerCase() == key2) {
 				target.appendChild(wrapKey(key2, "white"));
 			}
-
 			switch (beginTime) {
 				case -1:
 					beginTime = Date.now();

@@ -17,7 +17,6 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   <style>
-
     html {
       position: relative;
       min-height: 100%;
@@ -33,12 +32,12 @@
 
     button {
       background-color: #168fb8 !important;
-      border-color:#0d5e79;
-      border-style:solid;
+      border-color: #0d5e79;
+      border-style: solid;
     }
-    
+
     input {
-      color:black !important;
+      color: black !important;
     }
 
     .footer {
@@ -55,7 +54,13 @@
 
 <body>
   <div class="container text-center" role="main" style="font-size:20px">
-
+    <div>
+      <p>hello. if u are special, here are the key names for the following:</p>
+      <strong>every key is case insensitive. just spell it right.</strong>
+      <p>arrow keys: "ArrowLeft, ArrowUp, ArrowRight, ArrowDown"</p>
+      <p>other keys: "Shift, Control, Alt"</p>
+      <p>spacebar: " " (its just a spacebar, so its invisible.)</p>
+    </div>
     <div class="page-header text-center">
       <h1>osu! Stream Speed Benchmark</h1>
     </div>
@@ -85,13 +90,13 @@
     </div>
 
     Key 1<br />
-    <input id="key1" maxlength="1" /><br />
+    <input id="key1" maxlength="10" /><br />
     Key 2<br />
-    <input id="key2" maxlength="1" /><br /><br />
+    <input id="key2" maxlength="10" /><br /><br />
     <div style="overflow-wrap: break-word;" contenteditable="false">
     </div><br />
     <button id="submit" onclick="beginTest()" type="button">Begin Test</button><br />
-    <button id="stopbtn" onClick="endTest()" type="button" style="display:none">Stop Test</button><br />
+    <button id="stopbtn" onclick="endTest()" type="button" style="display:none">Stop Test</button><br />
 
     <div id="status">Time starts when you make your first click.</div>
     <h3>Your Results:</h3>
