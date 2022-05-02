@@ -171,7 +171,7 @@ $(document).keyup(function (event) {
 	//let textarea = document.querySelector(".resize-ta");
 	//textarea.style.height = calcHeight(textarea.value) + "px";
 
-	let target = document.querySelector('div[contenteditable]');
+	const target = document.querySelector('div[contenteditable]');
 	if (event.keyCode == ENTER_KEY && !_running) {
 		beginTest();
 	}
@@ -210,6 +210,7 @@ $(document).keyup(function (event) {
 });
 
 $(document).mousedown(function (event) {
+	const target = document.querySelector('div[contenteditable]');
 	if ($("input[name='cmouse']").prop("checked")) {
 		document.oncontextmenu = function (e) { stopEvent(e); return false; };
 
@@ -219,6 +220,12 @@ $(document).mousedown(function (event) {
 		}
 		if (_running) {
 			if ((event.which) == 1 || (event.which) == 3) {
+				if (event.which == 1) {
+					target.appendChild(wrapKey("m1", "blue"));
+				}
+				if (event.which == 3) {
+					target.appendChild(wrapKey("m3", "yellow"));
+				}
 				switch (beginTime) {
 					case -1:
 						beginTime = Date.now();
