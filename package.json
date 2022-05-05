@@ -11,7 +11,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build-css": "npx tailwindcss-cli build -i src/input.css -o public/output.css -w"
+    "build-css": "npx tailwindcss-cli build -i src/input.css -o dist/output.css -w"
   },
   "repository": {
     "type": "git",
